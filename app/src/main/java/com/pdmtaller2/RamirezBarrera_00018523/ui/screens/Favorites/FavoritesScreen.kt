@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.screens.Favorites
+package com.pdmtaller2.RamirezBarrera_00018523.ui.screens.Favorites
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

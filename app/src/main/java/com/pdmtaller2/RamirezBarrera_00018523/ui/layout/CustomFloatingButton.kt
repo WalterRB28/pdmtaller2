@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.layout
+package com.pdmtaller2.RamirezBarrera_00018523.ui.layout
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -6,7 +6,6 @@ import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 
 @Composable

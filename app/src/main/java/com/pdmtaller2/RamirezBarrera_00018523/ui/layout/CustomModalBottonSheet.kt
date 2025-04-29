@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.layout
+package com.pdmtaller2.RamirezBarrera_00018523.ui.layout
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.layout
+package com.pdmtaller2.RamirezBarrera_00018523.ui.layout
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun CustomBottomBar(navItems: List<NavItem>,  selectedItem: String = "nowplaying", onItemSelected: (String) -> Unit) {
+fun CustomBottomBar(navItems: List<NavItem>, selectedItem: String = "nowplaying", onItemSelected: (String) -> Unit) {
   NavigationBar(
     //containerColor = Color.Green,
     //contentColor = Color.Black,

@@ -1,6 +1,6 @@
-package com.agarcia.myfirstandroidapp.data.dummy
+package com.pdmtaller2.RamirezBarrera_00018523.data.dummy
 
-import com.agarcia.myfirstandroidapp.data.model.Movie
+import com.pdmtaller2.RamirezBarrera_00018523.data.model.Movie
 
 val movies = listOf(
   Movie(

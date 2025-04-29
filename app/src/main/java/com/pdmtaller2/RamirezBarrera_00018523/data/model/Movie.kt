@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.data.model
+package com.pdmtaller2.RamirezBarrera_00018523.data.model
 
 data class Movie(
   val id: Int,

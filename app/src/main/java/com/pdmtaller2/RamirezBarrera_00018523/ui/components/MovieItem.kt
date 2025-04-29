@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.components
+package com.pdmtaller2.RamirezBarrera_00018523.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -20,8 +20,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.agarcia.myfirstandroidapp.data.model.Movie
-import com.agarcia.myfirstandroidapp.helpers.formatLongDate
+import com.pdmtaller2.RamirezBarrera_00018523.data.model.Movie
+import com.pdmtaller2.RamirezBarrera_00018523.helpers.formatLongDate
 
 @Composable
 fun MovieItem(movie: Movie, onMovieClick: (Int) -> Unit) {

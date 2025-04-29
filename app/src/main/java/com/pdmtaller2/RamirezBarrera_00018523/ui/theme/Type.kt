@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.theme
+package com.pdmtaller2.RamirezBarrera_00018523.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

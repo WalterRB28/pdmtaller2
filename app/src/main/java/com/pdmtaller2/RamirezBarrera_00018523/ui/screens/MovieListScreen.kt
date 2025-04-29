@@ -1,4 +1,4 @@
-package com.agarcia.myfirstandroidapp.ui.screens
+package com.pdmtaller2.RamirezBarrera_00018523.ui.screens
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.agarcia.myfirstandroidapp.data.dummy.movies
-import com.agarcia.myfirstandroidapp.ui.components.MovieItem
+import com.pdmtaller2.RamirezBarrera_00018523.data.dummy.movies
+import com.pdmtaller2.RamirezBarrera_00018523.ui.components.MovieItem
 
 @Composable
 fun MovieListScreen(

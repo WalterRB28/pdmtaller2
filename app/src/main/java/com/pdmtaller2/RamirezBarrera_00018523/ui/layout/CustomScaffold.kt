@@ -1,6 +1,5 @@
-package com.agarcia.myfirstandroidapp.ui.layout
+package com.pdmtaller2.RamirezBarrera_00018523.ui.layout
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,15 +19,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.agarcia.myfirstandroidapp.ui.navigations.MainNavigation
-import com.agarcia.myfirstandroidapp.ui.navigations.MovieListScreenNavigation
-import com.agarcia.myfirstandroidapp.ui.navigations.MyFavoritesScreenNavigation
-import com.agarcia.myfirstandroidapp.ui.navigations.UpCommingScreenNavigation
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MainNavigation
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MovieListScreenNavigation
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MyFavoritesScreenNavigation
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.UpCommingScreenNavigation
 import kotlinx.coroutines.launch
 
 const val MovieListScreenNavigationId = "com.agarcia.myfirstandroidapp.ui.navigations.MovieDetailScreenNavigation/{id}"
@@ -79,23 +79,27 @@ fun CustomScaffold () {
   }
 
   Scaffold(
-    topBar = { CustomTopBar(
-      title = title,
-      showBackButton = currentDestination == MovieListScreenNavigationId,
-      onBackClick = { navController.popBackStack() },
-    )},
-    bottomBar = { CustomBottomBar(
-      navItems = navItems,
-      selectedItem = selectedItem,
-      onItemSelected = { onItemSelected(it) }
-    )},
+    topBar = {
+      CustomTopBar(
+        title = title,
+        showBackButton = currentDestination == MovieListScreenNavigationId,
+        onBackClick = { navController.popBackStack() },
+      )
+    },
+    bottomBar = {
+      CustomBottomBar(
+        navItems = navItems,
+        selectedItem = selectedItem,
+        onItemSelected = { onItemSelected(it) }
+      )
+    },
     snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
-    floatingActionButton = { CustomFloatingButton( onClick = { onFloatingButtonClick("Hola Mundo desde el Floating Button")}) },
+    floatingActionButton = { CustomFloatingButton(onClick = { onFloatingButtonClick("Hola Mundo desde el Floating Button") }) },
     ) { innerPadding ->
     Column (
       modifier = Modifier.padding(innerPadding).fillMaxSize(),
       verticalArrangement = Arrangement.Center,
-      horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
+      horizontalAlignment = Alignment.CenterHorizontally
     ) {
       MainNavigation(navController = navController)
     }
