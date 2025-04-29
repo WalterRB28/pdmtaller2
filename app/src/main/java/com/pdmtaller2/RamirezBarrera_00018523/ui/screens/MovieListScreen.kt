@@ -10,21 +10,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.pdmtaller2.RamirezBarrera_00018523.data.dummy.restaurants
-import com.pdmtaller2.RamirezBarrera_00018523.ui.components.RestaurantItem
+import com.agarcia.myfirstandroidapp.data.dummy.movies
+import com.agarcia.myfirstandroidapp.ui.components.MovieItem
 
 @Composable
-fun RestaurantListScreen(
-  onRestaurantClick : (Int) -> Unit = {}
+fun MovieListScreen(
+  onMovieClick : (Int) -> Unit = {}
 ){
-  val restaurant = restaurants
+  val movies = movies
   LazyColumn(
     modifier = Modifier
       .fillMaxSize()
       .padding(16.dp)
   ) {
-    items(restaurant) { restaurant ->
-      RestaurantItem(restaurant = restaurant, onRestauranClick = onRestaurantClick)
+    items(movies) { movie ->
+      MovieItem(movie = movie, onMovieClick = onMovieClick)
       Spacer(modifier = Modifier.height(16.dp))
     }
   }
@@ -33,5 +33,5 @@ fun RestaurantListScreen(
 @Preview(showBackground = true)
 @Composable
 fun MovieListScreenPreview(){
-  RestaurantListScreen()
+  MovieListScreen()
 }

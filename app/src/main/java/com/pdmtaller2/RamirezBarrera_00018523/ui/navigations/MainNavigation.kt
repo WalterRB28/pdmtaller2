@@ -1,25 +1,33 @@
-package com.pdmtaller2.RamirezBarrera_00018523.ui.navigations
+package com.agarcia.myfirstandroidapp.ui.navigations
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.agarcia.myfirstandroidapp.ui.screens.RestaurantDetailScreen
-import com.agarcia.myfirstandroidapp.ui.screens.RestaurantListScreen
+import com.agarcia.myfirstandroidapp.ui.screens.Favorites.Favorites
+import com.agarcia.myfirstandroidapp.ui.screens.MovieDetailScreen
+import com.agarcia.myfirstandroidapp.ui.screens.MovieListScreen
+import com.agarcia.myfirstandroidapp.ui.screens.UpComming.UpComming
 
 @Composable
 fun MainNavigation(navController: NavHostController) {
-  val onRestaurantClick = { movieId: Int ->
-    navController.navigate(RestaurantDetailScreenNavigation(movieId))
+  val onMovieClick = { movieId: Int ->
+    navController.navigate(MovieDetailScreenNavigation(movieId))
   }
 
-  NavHost(navController = navController, startDestination = RestaurantListScreenNavigation) {
-    composable <RestaurantListScreenNavigation> {
-      RestaurantListScreen(onRestaurantClick)
+  NavHost(navController = navController, startDestination = MovieListScreenNavigation) {
+    composable <MovieListScreenNavigation> {
+      MovieListScreen(onMovieClick)
     }
-    composable <RestaurantDetailScreenNavigation> { backStackEntry ->
+    composable <MovieDetailScreenNavigation> { backStackEntry ->
       val movieId = backStackEntry.arguments?.getInt("id") ?: 0
-      RestaurantDetailScreen(restaurantId = movieId)
+      MovieDetailScreen(movieId = movieId)
+    }
+    composable<MyFavoritesScreenNavigation> {
+      Favorites()
+    }
+    composable<UpCommingScreenNavigation> {
+      UpComming()
     }
   }
 }

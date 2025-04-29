@@ -1,4 +1,4 @@
-package com.pdmtaller2.RamirezBarrera_00018523.ui.theme
+package com.agarcia.myfirstandroidapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

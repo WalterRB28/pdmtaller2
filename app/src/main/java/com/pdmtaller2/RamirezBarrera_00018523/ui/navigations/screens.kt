@@ -1,7 +1,9 @@
-package com.pdmtaller2.RamirezBarrera_00018523.ui.navigations
+package com.agarcia.myfirstandroidapp.ui.navigations
+
+import kotlinx.serialization.Serializable
 
 @Serializable
-object RestaurantListScreenNavigation
+object MovieListScreenNavigation
 
 @Serializable
 object MyFavoritesScreenNavigation
@@ -10,4 +12,4 @@ object MyFavoritesScreenNavigation
 object UpCommingScreenNavigation
 
 @Serializable
-data class RestaurantDetailScreenNavigation(val id: Int)
+data class MovieDetailScreenNavigation(val id: Int)
