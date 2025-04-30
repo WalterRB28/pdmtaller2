@@ -7,107 +7,82 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Tv
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
+import androidx.navigation.compose.rememberNavController
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.AppRoutes
 import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MainNavigation
-import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MovieListScreenNavigation
-import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MyFavoritesScreenNavigation
-import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.UpCommingScreenNavigation
-import kotlinx.coroutines.launch
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MyOrdersScreenNavigation
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.RestaurantListScreenNavigation
+import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.SearchScreenNavigation
 
-const val MovieListScreenNavigationId = "com.agarcia.myfirstandroidapp.ui.navigations.MovieDetailScreenNavigation/{id}"
+const val RestaurantListScreenNavigationId = "com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.RestaurantDetailScreenNavigation/{id}"
 data class NavItem(val label: String, val icon: ImageVector, val route: String)
 
 @Composable
-fun CustomScaffold () {
-  val navController = rememberNavController()
-  val coroutineScope = rememberCoroutineScope()
-  val snackbarHostState = remember { SnackbarHostState() }
+fun CustomScaffold() {
+    val navController = rememberNavController()
+    var title by rememberSaveable { mutableStateOf("Restaurantes") }
+    var selectedItem by rememberSaveable { mutableStateOf(AppRoutes.RESTAURANT_LIST) }
 
-  val currentDestination = navController
-    .currentBackStackEntryAsState().value?.destination?.route
+    val currentDestination = navController
+        .currentBackStackEntryAsState().value?.destination?.route
 
-  var title by rememberSaveable { mutableStateOf("Tendencias") }
-  var selectedItem by rememberSaveable { mutableStateOf("nowplaying") }
+    val navItems = listOf(
+        NavItem("Restaurantes", Icons.Filled.Home, AppRoutes.RESTAURANT_LIST),
+        NavItem("Search", Icons.Filled.Favorite, AppRoutes.SEARCH),
+        NavItem("My Orders", Icons.Filled.Home, AppRoutes.ORDERS)
+    )
 
-  val navItems = listOf(
-    NavItem("Tendencias", Icons.Filled.Home, "nowplaying"),
-    NavItem("Favorites", Icons.Filled.Favorite, "favorites"),
-    NavItem("Up comming", Icons.Filled.Tv, "upcomming")
-  )
-
-  fun onFloatingButtonClick(text:String) {
-    coroutineScope.launch {
-      snackbarHostState.showSnackbar(
-        message = text,
-        actionLabel = "OK",
-        duration = SnackbarDuration.Short,
-      )
+    fun onItemSelected(currentItem: String) {
+        selectedItem = currentItem
+        title = when (currentItem) {
+            AppRoutes.RESTAURANT_LIST -> "Restaurantes"
+            AppRoutes.SEARCH -> "Search"
+            AppRoutes.ORDERS -> "My Orders"
+            else -> "Inicio"
+        }
+        navController.navigate(currentItem) {
+            // Configuración para evitar múltiples copias de la misma pantalla
+            launchSingleTop = true
+            popUpTo(navController.graph.findStartDestination().id) {
+                saveState = true
+            }
+            restoreState = true
+        }
     }
-  }
 
-  fun onItemSelected(currentItem: String) {
-    selectedItem = currentItem
-    title = when (currentItem) {
-      "nowplaying" -> "Tendencias"
-      "favorites" -> "Mis Favoritas"
-      "upcomming" -> "Próximamente"
-      else -> "Inicio"
-    }
-    when (currentItem) {
-      "nowplaying" -> navController.navigate(MovieListScreenNavigation)
-      "favorites" -> navController.navigate(MyFavoritesScreenNavigation)
-      "upcomming" -> navController.navigate(UpCommingScreenNavigation)
-      else -> navController.navigate(MovieListScreenNavigation)
-    }
-  }
-
-  Scaffold(
-    topBar = {
-      CustomTopBar(
-        title = title,
-        showBackButton = currentDestination == MovieListScreenNavigationId,
-        onBackClick = { navController.popBackStack() },
-      )
-    },
-    bottomBar = {
-      CustomBottomBar(
-        navItems = navItems,
-        selectedItem = selectedItem,
-        onItemSelected = { onItemSelected(it) }
-      )
-    },
-    snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
-    floatingActionButton = { CustomFloatingButton(onClick = { onFloatingButtonClick("Hola Mundo desde el Floating Button") }) },
+    Scaffold(
+        topBar = {
+            CustomTopBar(
+                title = title,
+                showBackButton = currentDestination?.contains("restaurantes/") == true,
+                onBackClick = { navController.popBackStack() },
+            )
+        },
+        bottomBar = {
+            CustomBottomBar(
+                navItems = navItems,
+                selectedItem = selectedItem,
+                onItemSelected = { onItemSelected(it) }
+            )
+        },
     ) { innerPadding ->
-    Column (
-      modifier = Modifier.padding(innerPadding).fillMaxSize(),
-      verticalArrangement = Arrangement.Center,
-      horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-      MainNavigation(navController = navController)
+        Column(
+            modifier = Modifier.padding(innerPadding).fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            MainNavigation(navController = navController)
+        }
     }
-  }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun CustomScaffoldPreview() {
-  CustomScaffold()
 }

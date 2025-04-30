@@ -3,13 +3,13 @@ package com.pdmtaller2.RamirezBarrera_00018523.ui.navigations
 import kotlinx.serialization.Serializable
 
 @Serializable
-object MovieListScreenNavigation
+object RestaurantListScreenNavigation
 
 @Serializable
-object MyFavoritesScreenNavigation
+object SearchScreenNavigation
 
 @Serializable
-object UpCommingScreenNavigation
+object MyOrdersScreenNavigation
 
 @Serializable
-data class MovieDetailScreenNavigation(val id: Int)
+data class RestaurantDetailScreenNavigation(val id: Int)

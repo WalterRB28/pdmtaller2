@@ -14,6 +14,6 @@ fun Favorites() {
     modifier = Modifier.fillMaxSize(),
     contentAlignment = Alignment.Center
   ) {
-    Text("Mis Favoritos", style = MaterialTheme.typography.titleLarge)
+    Text("Buscar", style = MaterialTheme.typography.titleLarge)
   }
 }

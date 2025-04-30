@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="FoodSpot_by_RBarrera.app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-29T21:34:46.111860160Z">
+        <DropdownSelection timestamp="2025-04-29T21:39:47.974620834Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=/home/walter/.android/avd/Medium_Phone.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=AGVQCP4527400574" />
             </handle>
           </Target>
         </DropdownSelection>
