@@ -1,4 +1,4 @@
-package com.pdmtaller2.RamirezBarrera_00018523.ui.screens.UpComming
+package com.pdmtaller2.RamirezBarrera_00018523.ui.screens.MyOrders
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun UpComming() {
+fun OrdersScreen() {
   Box(
     modifier = Modifier.fillMaxSize(),
     contentAlignment = Alignment.Center

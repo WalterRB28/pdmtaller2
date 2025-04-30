@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Scaffold
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.runtime.Composable
@@ -36,8 +38,8 @@ fun CustomScaffold() {
 
     val navItems = listOf(
         NavItem("Restaurantes", Icons.Filled.Home, AppRoutes.RESTAURANT_LIST),
-        NavItem("Search", Icons.Filled.Favorite, AppRoutes.SEARCH),
-        NavItem("My Orders", Icons.Filled.Home, AppRoutes.ORDERS)
+        NavItem("Search", Icons.Filled.Search, AppRoutes.SEARCH),
+        NavItem("My Orders", Icons.Filled.ShoppingCart, AppRoutes.ORDERS)
     )
 
     fun onItemSelected(currentItem: String) {
