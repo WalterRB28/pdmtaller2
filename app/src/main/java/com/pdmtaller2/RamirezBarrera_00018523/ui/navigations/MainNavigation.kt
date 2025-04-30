@@ -9,17 +9,8 @@ import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.UpComming.UpComming
 import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.RestaurantDetailScreen
 import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.RestaurantList.RestaurantListScreen
 
-object AppRoutes {
-    const val RESTAURANT_LIST = "restaurantes"
-    const val SEARCH = "search"
-    const val ORDERS = "orders"
-    const val RESTAURANT_DETAIL = "restaurantes/{id}"
-
-    fun restaurantDetail(id: Int) = "restaurantes/$id"
-}
-
 @Composable
-fun MainNavigation(navController: NavHostController) {
+fun MainNavigation(navController: NavHostController, onTitleChange: (String) -> Unit) {
     val onRestaurantClick = { restaurantId: Int ->
         navController.navigate(AppRoutes.restaurantDetail(restaurantId))
     }
@@ -30,16 +21,22 @@ fun MainNavigation(navController: NavHostController) {
     ) {
         composable(AppRoutes.RESTAURANT_LIST) {
             RestaurantListScreen(onRestaurantClick)
+            onTitleChange("Restaurantes")
         }
         composable(AppRoutes.RESTAURANT_DETAIL) { backStackEntry ->
             val restaurantId = backStackEntry.arguments?.getString("id")?.toIntOrNull() ?: 0
-            RestaurantDetailScreen(restaurantId = restaurantId)
+            RestaurantDetailScreen(
+                restaurantId = restaurantId,
+                onTitleChange = onTitleChange
+            )
         }
         composable(AppRoutes.SEARCH) {
             Favorites()
+            onTitleChange("Search")
         }
         composable(AppRoutes.ORDERS) {
             UpComming()
+            onTitleChange("My Orders")
         }
     }
 }

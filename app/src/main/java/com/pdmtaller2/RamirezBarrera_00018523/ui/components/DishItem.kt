@@ -28,7 +28,7 @@ fun DishItem(dish: Dish, onAddToCart: (Dish) -> Unit) {
     Card(
         shape = RoundedCornerShape(12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().padding(16.dp)
     ) {
         Row(modifier = Modifier.padding(16.dp)) {
             AsyncImage(
@@ -64,7 +64,7 @@ fun DishItem(dish: Dish, onAddToCart: (Dish) -> Unit) {
 
         Button(
             onClick = { onAddToCart(dish) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp)
         ) {
             Text(text = "Agregar al carrito")
         }

@@ -21,9 +21,6 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.AppRoutes
 import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MainNavigation
-import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.MyOrdersScreenNavigation
-import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.RestaurantListScreenNavigation
-import com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.SearchScreenNavigation
 
 const val RestaurantListScreenNavigationId = "com.pdmtaller2.RamirezBarrera_00018523.ui.navigations.RestaurantDetailScreenNavigation/{id}"
 data class NavItem(val label: String, val icon: ImageVector, val route: String)
@@ -82,7 +79,7 @@ fun CustomScaffold() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            MainNavigation(navController = navController)
+            MainNavigation(navController = navController, onTitleChange = { title = it })
         }
     }
 }

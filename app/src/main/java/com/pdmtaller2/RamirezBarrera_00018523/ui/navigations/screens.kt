@@ -1,15 +1,10 @@
 package com.pdmtaller2.RamirezBarrera_00018523.ui.navigations
 
-import kotlinx.serialization.Serializable
+object AppRoutes {
+    const val RESTAURANT_LIST = "restaurantes"
+    const val SEARCH = "search"
+    const val ORDERS = "orders"
+    const val RESTAURANT_DETAIL = "restaurantes/{id}"
 
-@Serializable
-object RestaurantListScreenNavigation
-
-@Serializable
-object SearchScreenNavigation
-
-@Serializable
-object MyOrdersScreenNavigation
-
-@Serializable
-data class RestaurantDetailScreenNavigation(val id: Int)
+    fun restaurantDetail(id: Int) = "restaurantes/$id"
+}
