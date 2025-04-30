@@ -4,7 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.Favorites.Favorites
+import com.pdmtaller2.RamirezBarrera_00018523.data.dummy.restaurants
+import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.Search.SearchScreen
 import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.UpComming.UpComming
 import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.RestaurantDetailScreen
 import com.pdmtaller2.RamirezBarrera_00018523.ui.screens.RestaurantList.RestaurantListScreen
@@ -31,7 +32,12 @@ fun MainNavigation(navController: NavHostController, onTitleChange: (String) -> 
             )
         }
         composable(AppRoutes.SEARCH) {
-            Favorites()
+            SearchScreen(
+                restaurantsList = restaurants,
+                onRestaurantClick = { restaurantId ->
+                    navController.navigate(AppRoutes.restaurantDetail(restaurantId))
+                }
+            )
             onTitleChange("Search")
         }
         composable(AppRoutes.ORDERS) {

@@ -9,36 +9,36 @@ val restaurants = listOf(
         id = 1,
         name = "Burger Express",
         description = "Hamburguesas rápidas y sabrosas",
-        imageUrl = "https://fastly.picsum.photos/id/737/200/300",
+        imageUrl = "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_website/es/cms/SEO/recipes/albondigas-caseras-de-cerdo-con-salsa-barbacoa.jpeg",
         categories = listOf("Comida Rápida"),
         menu = listOf(
-            Dish(1, "Cheeseburger Clásica", "Hamburguesa con queso cheddar, lechuga y tomate", ""),
-            Dish(2, "Papas Fritas", "Crujientes papas fritas con sal", ""),
-            Dish(3, "Combo Express", "Hamburguesa, papas y bebida", "")
+            Dish(1, "Cheeseburger Clásica", "Hamburguesa con queso cheddar, lechuga y tomate", "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_website/es/cms/SEO/recipes/albondigas-caseras-de-cerdo-con-salsa-barbacoa.jpeg"),
+            Dish(2, "Papas Fritas", "Crujientes papas fritas con sal", "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_website/es/cms/SEO/recipes/albondigas-caseras-de-cerdo-con-salsa-barbacoa.jpeg"),
+            Dish(3, "Combo Express", "Hamburguesa, papas y bebida", "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_website/es/cms/SEO/recipes/albondigas-caseras-de-cerdo-con-salsa-barbacoa.jpeg")
         )
     ),
     Restaurant(
         id = 2,
         name = "Pizza al Paso",
         description = "Pizzas listas en minutos",
-        imageUrl = "",
+        imageUrl = "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y24_R16_W42_ES_ESSGP30616-2_Main__edit_meat_high-a670615d.jpg",
         categories = listOf("Comida Rápida"),
         menu = listOf(
-            Dish(4, "Pizza Pepperoni", "Pizza con salsa de tomate, queso mozzarella y pepperoni", ""),
-            Dish(5, "Pizza Hawaiana", "Con piña y jamón", ""),
-            Dish(6, "Calzone Express", "Calzone relleno de queso y jamón", "")
+            Dish(4, "Pizza Pepperoni", "Pizza con salsa de tomate, queso mozzarella y pepperoni", "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y24_R16_W42_ES_ESSGP30616-2_Main__edit_meat_high-a670615d.jpg"),
+            Dish(5, "Pizza Hawaiana", "Con piña y jamón", "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y24_R16_W42_ES_ESSGP30616-2_Main__edit_meat_high-a670615d.jpg"),
+            Dish(6, "Calzone Express", "Calzone relleno de queso y jamón", "https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y24_R16_W42_ES_ESSGP30616-2_Main__edit_meat_high-a670615d.jpg")
         )
     ),
     Restaurant(
         id = 3,
         name = "Pollo Crocante",
         description = "Especialistas en pollo frito",
-        imageUrl = "",
+        imageUrl = "https://www.bbva.com/wp-content/uploads/2023/04/cocina-de-aprovechamiento.jpg",
         categories = listOf("Comida Rápida"),
         menu = listOf(
-            Dish(7, "Pieza de Pollo", "Pollo frito crujiente", ""),
-            Dish(8, "Combo Familiar", "8 piezas de pollo, papas y soda", ""),
-            Dish(9, "Alitas BBQ", "Alitas con salsa BBQ", "")
+            Dish(7, "Pieza de Pollo", "Pollo frito crujiente", "https://www.bbva.com/wp-content/uploads/2023/04/cocina-de-aprovechamiento.jpg"),
+            Dish(8, "Combo Familiar", "8 piezas de pollo, papas y soda", "https://www.bbva.com/wp-content/uploads/2023/04/cocina-de-aprovechamiento.jpg"),
+            Dish(9, "Alitas BBQ", "Alitas con salsa BBQ", "https://www.bbva.com/wp-content/uploads/2023/04/cocina-de-aprovechamiento.jpg")
         )
     ),
 
@@ -47,36 +47,36 @@ val restaurants = listOf(
         id = 4,
         name = "El Taco Loco",
         description = "Tacos y antojitos tradicionales",
-        imageUrl = "",
+        imageUrl = "https://i.pinimg.com/736x/90/d1/45/90d145387e231599ba684e419213f8d8.jpg",
         categories = listOf("Comida Mexicana"),
         menu = listOf(
-            Dish(10, "Tacos al Pastor", "Tacos con carne marinada y piña", ""),
-            Dish(11, "Quesadillas", "Tortilla de maíz rellena de queso", ""),
-            Dish(12, "Tacos de Asada", "Carne asada, cebolla y cilantro", "")
+            Dish(10, "Tacos al Pastor", "Tacos con carne marinada y piña", "https://i.pinimg.com/736x/90/d1/45/90d145387e231599ba684e419213f8d8.jpg"),
+            Dish(11, "Quesadillas", "Tortilla de maíz rellena de queso", "https://i.pinimg.com/736x/90/d1/45/90d145387e231599ba684e419213f8d8.jpg"),
+            Dish(12, "Tacos de Asada", "Carne asada, cebolla y cilantro", "https://i.pinimg.com/736x/90/d1/45/90d145387e231599ba684e419213f8d8.jpg")
         )
     ),
     Restaurant(
         id = 5,
         name = "Burritos MX",
         description = "Burritos llenos de sabor",
-        imageUrl = "",
+        imageUrl = "https://revistavive.com/wp-content/uploads/2019/01/aa.jpg",
         categories = listOf("Comida Mexicana"),
         menu = listOf(
-            Dish(13, "Burrito Clásico", "Frijoles, arroz, carne y guacamole", ""),
-            Dish(14, "Burrito Veggie", "Relleno de vegetales y frijoles", ""),
-            Dish(15, "Burrito Picante", "Con salsa habanero", "")
+            Dish(13, "Burrito Clásico", "Frijoles, arroz, carne y guacamole", "https://revistavive.com/wp-content/uploads/2019/01/aa.jpg"),
+            Dish(14, "Burrito Veggie", "Relleno de vegetales y frijoles", "https://revistavive.com/wp-content/uploads/2019/01/aa.jpg"),
+            Dish(15, "Burrito Picante", "Con salsa habanero", "https://revistavive.com/wp-content/uploads/2019/01/aa.jpg")
         )
     ),
     Restaurant(
         id = 6,
         name = "Sazón Azteca",
         description = "Platillos típicos de México",
-        imageUrl = "",
+        imageUrl = "https://lopezdoriga.com/wp-content/uploads/2015/09/comida_rapida1.jpg",
         categories = listOf("Comida Mexicana"),
         menu = listOf(
-            Dish(16, "Enchiladas Verdes", "Tortillas rellenas bañadas en salsa verde", ""),
-            Dish(17, "Pozole", "Sopa tradicional de maíz y carne", ""),
-            Dish(18, "Chiles Rellenos", "Pimientos rellenos de carne y queso", "")
+            Dish(16, "Enchiladas Verdes", "Tortillas rellenas bañadas en salsa verde", "https://lopezdoriga.com/wp-content/uploads/2015/09/comida_rapida1.jpg"),
+            Dish(17, "Pozole", "Sopa tradicional de maíz y carne", "https://lopezdoriga.com/wp-content/uploads/2015/09/comida_rapida1.jpg"),
+            Dish(18, "Chiles Rellenos", "Pimientos rellenos de carne y queso", "https://lopezdoriga.com/wp-content/uploads/2015/09/comida_rapida1.jpg")
         )
     ),
 
@@ -85,24 +85,24 @@ val restaurants = listOf(
         id = 7,
         name = "La Trattoria",
         description = "Auténtica cocina italiana",
-        imageUrl = "",
+        imageUrl = "https://cdn.aarp.net/content/dam/aarp/members-only/member-benefits/2024/05/1140-martinez-mexican-mesa-cookbook-papitas-esp.imgcache.rev.web.1000.575.jpg",
         categories = listOf("Comida Italiana"),
         menu = listOf(
-            Dish(19, "Lasagna", "Pasta en capas con carne y salsa de tomate", ""),
-            Dish(20, "Spaghetti Bolognese", "Pasta con salsa de carne", ""),
-            Dish(21, "Fettuccine Alfredo", "Fettuccine en salsa cremosa de queso", "")
+            Dish(19, "Lasagna", "Pasta en capas con carne y salsa de tomate", "https://cdn.aarp.net/content/dam/aarp/members-only/member-benefits/2024/05/1140-martinez-mexican-mesa-cookbook-papitas-esp.imgcache.rev.web.1000.575.jpg"),
+            Dish(20, "Spaghetti Bolognese", "Pasta con salsa de carne", "https://cdn.aarp.net/content/dam/aarp/members-only/member-benefits/2024/05/1140-martinez-mexican-mesa-cookbook-papitas-esp.imgcache.rev.web.1000.575.jpg"),
+            Dish(21, "Fettuccine Alfredo", "Fettuccine en salsa cremosa de queso", "https://cdn.aarp.net/content/dam/aarp/members-only/member-benefits/2024/05/1140-martinez-mexican-mesa-cookbook-papitas-esp.imgcache.rev.web.1000.575.jpg")
         )
     ),
     Restaurant(
         id = 8,
         name = "Pasta e Vino",
         description = "Pasta artesanal y vinos selectos",
-        imageUrl = "",
+        imageUrl = "https://cdn.tecnohotelnews.com/2022/12/2MdTZZdX-siete-claves-para-ofrecer-platos-saludables-atractivos-a-los-comensales.jpg",
         categories = listOf("Comida Italiana"),
         menu = listOf(
-            Dish(22, "Penne Arrabbiata", "Pasta picante en salsa de tomate", ""),
-            Dish(23, "Ravioli de Espinaca", "Rellenos de espinaca y ricotta", ""),
-            Dish(24, "Bruschetta", "Pan tostado con tomate y albahaca", "")
+            Dish(22, "Penne Arrabbiata", "Pasta picante en salsa de tomate", "https://cdn.tecnohotelnews.com/2022/12/2MdTZZdX-siete-claves-para-ofrecer-platos-saludables-atractivos-a-los-comensales.jpg"),
+            Dish(23, "Ravioli de Espinaca", "Rellenos de espinaca y ricotta", "https://cdn.tecnohotelnews.com/2022/12/2MdTZZdX-siete-claves-para-ofrecer-platos-saludables-atractivos-a-los-comensales.jpg"),
+            Dish(24, "Bruschetta", "Pan tostado con tomate y albahaca", "https://cdn.tecnohotelnews.com/2022/12/2MdTZZdX-siete-claves-para-ofrecer-platos-saludables-atractivos-a-los-comensales.jpg")
         )
     ),
     Restaurant(
