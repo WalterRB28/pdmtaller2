@@ -17,7 +17,6 @@ fun SearchScreen(
   onRestaurantClick: (Int) -> Unit
 ) {
   var query by remember { mutableStateOf("") }
-  val queryLower = query.lowercase()
 
   val filteredRestaurants = restaurantsList.filter { restaurant ->
     val matchesRestaurantName = restaurant.name.contains(query, ignoreCase = true)
