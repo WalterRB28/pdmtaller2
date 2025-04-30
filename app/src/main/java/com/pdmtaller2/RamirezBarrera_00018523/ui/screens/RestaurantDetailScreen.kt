@@ -39,6 +39,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import com.pdmtaller2.RamirezBarrera_00018523.data.dummy.restaurants
 import com.pdmtaller2.RamirezBarrera_00018523.ui.components.DishItem
 import kotlinx.coroutines.launch
+import androidx.compose.material3.OutlinedTextField
 
 @Composable
 fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = {}) {
@@ -77,14 +78,13 @@ fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = 
                 .fillMaxSize()
                 .verticalScroll(scrollState)
         ) {
-            BasicTextField(
+            OutlinedTextField(
                 value = searchItem,
                 onValueChange = { searchItem = it },
+                label = { Text("Buscar platillos...") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(8.dp)
-                    .background(Color.Gray.copy(alpha = 0.1f), RoundedCornerShape(8.dp))
-                    .padding(12.dp),
+                    .padding(8.dp),
                 keyboardOptions = KeyboardOptions.Default.copy(
                     imeAction = ImeAction.Search
                 ),
@@ -93,9 +93,7 @@ fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = 
                         keyboardController?.hide()
                     }
                 )
-            ) {
-                Text(text = if (searchItem.isEmpty()) "Buscar platillos..." else searchItem)
-            }
+            )
 
             if (searchItem.isEmpty()) {
                 Text(
