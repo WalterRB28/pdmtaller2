@@ -60,8 +60,6 @@ fun DishItem(dish: Dish, onAddToCart: (Dish) -> Unit) {
             }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
-
         Button(
             onClick = { onAddToCart(dish) },
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp)
