@@ -9,7 +9,7 @@ val restaurants = listOf(
         id = 1,
         name = "Burger Express",
         description = "Hamburguesas rápidas y sabrosas",
-        imageUrl = "",
+        imageUrl = "https://fastly.picsum.photos/id/737/200/300",
         categories = listOf("Comida Rápida"),
         menu = listOf(
             Dish(1, "Cheeseburger Clásica", "Hamburguesa con queso cheddar, lechuga y tomate", ""),

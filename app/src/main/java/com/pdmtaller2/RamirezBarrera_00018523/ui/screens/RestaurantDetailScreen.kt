@@ -80,7 +80,6 @@ fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = 
                 .fillMaxSize()
                 .verticalScroll(scrollState)
         ) {
-            // 🔍 Buscador
             BasicTextField(
                 value = searchItem,
                 onValueChange = { searchItem = it },
@@ -101,7 +100,6 @@ fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = 
                 Text(text = if (searchItem.isEmpty()) "Buscar platillos..." else searchItem)
             }
 
-            // 📝 Descripción
             if (searchItem.isEmpty()) {
                 Text(
                     text = restaurant.description,
@@ -111,7 +109,6 @@ fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = 
                 )
             }
 
-            // 🍽 Menú
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
                     text = "Menú",
@@ -138,7 +135,6 @@ fun RestaurantDetailScreen(restaurantId: Int, onTitleChange: (String) -> Unit = 
             }
         }
 
-        // ✅ Snackbar que se mantiene fijo en la parte inferior
         SnackbarHost(
             hostState = snackbarHostState,
             modifier = Modifier
